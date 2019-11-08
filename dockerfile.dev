@@ -1,0 +1,17 @@
+# download base image
+FROM node:alpine
+
+#specify directory in container
+WORKDIR /app
+
+#copy dependency file into workdir
+COPY package.json .
+
+#install dependencies into img Fs
+RUN npm install
+
+#copy all other files into workdir
+COPY . .
+
+#specify defualt command
+CMD ["npm","run","start"]
