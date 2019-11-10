@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 #copy all other files into workdir
-COPY ./ ./
+COPY . .
 
 #specify defualt command
 RUN npm run build
