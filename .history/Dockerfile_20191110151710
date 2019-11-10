@@ -5,13 +5,13 @@ FROM node:alpine as builder
 WORKDIR /app
 
 #copy dependency file into workdir
-COPY package*.json ./
+COPY package.json .
 
 #install dependencies into img Fs
 RUN npm install
 
 #copy all other files into workdir
-COPY ./ ./
+COPY . .
 
 #specify defualt command
 RUN npm run build
