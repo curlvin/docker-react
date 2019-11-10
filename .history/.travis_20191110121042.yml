@@ -10,9 +10,9 @@ services:
 
 #configurations to be done before test runs
 before - install: 
-  - docker build -t macshild/dockerTest-react -f dockerfile.dev dockerfile.dev .
+  - docker build -t macshild/docker-react -f docker.dev docker.dev
 
 #commands needed to be executed to run the test suite
 script:
   #tell travis to run test on docker and exit test upon completion
-  - docker run macshild/dockerTest-react npm run test -- --coverage
+  - docker run macshild/docker-react npm run test -- --coverage
