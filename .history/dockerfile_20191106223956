@@ -17,11 +17,6 @@ COPY . .
 RUN npm run build
 
 
-#specify which service to be used as the server
+
 FROM nginx
-
-#specify which port to expose to the deployment host
-EXPOSE 80
-
-#specify which  files to be served up by nginx
 COPY --from=builder /app/build /usr/share/nginx/html
